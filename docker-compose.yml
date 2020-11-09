@@ -1,0 +1,29 @@
+version: '3'
+services:
+  # nginx:
+  #   restart: always
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ./nginx
+  #   ports:
+  #     - '3050:80'
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: ./api
+    volumes:
+      - ./api:/app
+    ports:
+      - '5000:5000'
+  client:
+    build:
+      dockerfile: Dockerfile
+      context: ./angular-code-validator
+    ports:
+      - '4200:4200'
+      - '3000:3000'
+      - '8888:80'
+    volumes:
+      - ./angular-code-validator:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/dist

@@ -1,0 +1,105 @@
+button {
+  margin-top: 10px;
+}
+
+.verification {
+  margin-top: 100px;
+  h1 {
+    text-align: center;
+  }
+}
+
+#wrapper {
+  text-align: center;
+  box-sizing: border-box;
+  color: #333;
+  
+  #dialog {
+    margin: 10px auto;
+    padding: 20px 30px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    
+    h3 {
+      margin: 0 0 10px;
+      padding: 0;
+      line-height: 1.25;
+    }
+    
+    span {
+      font-size: 90%;
+    }
+    
+    #form {
+      max-width: 320px;
+      margin: 25px auto 0;
+    
+    }
+    
+    button {
+      &.close {
+        border: solid 2px;
+        border-radius: 30px;
+        line-height: 19px;
+        font-size: 120%;
+        width: 22px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }           
+    }
+    
+    div {
+      position: relative;
+      z-index: 1;
+    }
+    
+    img {
+      position: absolute;
+      bottom: -70px;
+      right: -63px;
+    }
+  }
+}
+
+input {
+  margin: 0 5px;
+  text-align: center;
+  // line-height: 80px;
+  font-size: 30px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 5px #ccc inset;
+  outline: none;
+  // width: 20%;
+  transition: all .2s ease-in-out;
+  border-radius: 3px;
+  
+  &:focus {
+    border-color: powderblue;
+    box-shadow: 0 0 5px powderblue inset;
+  }
+  
+  &::selection {
+    background: transparent;
+  }
+
+  &.is-invalid {
+    border: solid 1px #ccc;
+    box-shadow: 0 0 5px #ccc inset;
+    outline: none;
+    // width: 20%;
+    border-radius: 3px;
+    border-color: red;
+    box-shadow: 0 0 5px red inset;
+
+    &:focus {
+      border-color: red;
+      box-shadow: 0 0 5px red inset;
+    }
+    
+    &::selection {
+      background: transparent;
+    }
+  }
+}

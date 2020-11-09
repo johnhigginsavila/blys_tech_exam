@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-2 verification">
+            <h1>Verification code:</h1>
+            <div id="wrapper">
+            
+                <div id="dialog">
+                    <div id="form">
+                        <ngb-alert type="danger" *ngIf="errorAlert" (close)="errorAlert = false">
+                            {{ errorText }}
+                        </ngb-alert>
+                        <form [formGroup]="verificationForm">
+                            <input class="digit0" formControlName="digit0" [ngClass]="{'is-invalid': onSubmit && formControl.digit0.errors}" (paste)="onPaste($event)" #digit0 (keyup)="_afterPress($event, 0)" (keydown)="_validateNumber($event, 0)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input [ngClass]="{'is-invalid': onSubmit && formControl.digit1.errors}" (paste)="onPaste($event)" #digit1 formControlName="digit1" (keyup)="_afterPress($event, 1)" (keydown)="_validateNumber($event, 1)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input [ngClass]="{'is-invalid': onSubmit && formControl.digit2.errors}" (paste)="onPaste($event)" #digit2 formControlName="digit2" (keyup)="_afterPress($event, 2)" (keydown)="_validateNumber($event, 2)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input [ngClass]="{'is-invalid': onSubmit && formControl.digit3.errors}" (paste)="onPaste($event)" #digit3 formControlName="digit3" (keyup)="_afterPress($event, 3)" (keydown)="_validateNumber($event, 3)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input [ngClass]="{'is-invalid': onSubmit && formControl.digit4.errors}" (paste)="onPaste($event)" #digit4 formControlName="digit4" (keyup)="_afterPress($event, 4)" (keydown)="_validateNumber($event, 4)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            <input [ngClass]="{'is-invalid': onSubmit && formControl.digit5.errors}" (paste)="onPaste($event)" #digit5 formControlName="digit5" (keyup)="_afterPress($event, 5)" (keydown)="_validateNumber($event, 5)" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                            
+                        </form>
+                    </div>
+                    <button #submit class="btn btn-info btn-block" (click)="sendCode()">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
