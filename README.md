@@ -18,4 +18,5 @@ server-side:
 
 # Running Tests
 **Normal Unit test for client: bash test.sh**
+
 **Headless Unit test for client: bash test-headless.sh**
